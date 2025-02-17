@@ -33,15 +33,15 @@ def scrab(url , keyword):
         for urls2 in valid_links:
             if urls2 not in Visited_urls:
                 Visited_urls.add(urls2)
-                url_join = urljoin(url , urls2)
-                if keyword in url_join:
-                    print(url_join)
-                    scrab(url_join,keyword) # We call function again to deep recursive pages
+                #print(urls2)
+                if keyword in urls2:
+                    print(urls2)
+                    scrab(urls2,keyword) # We call function again to deep recursive pages
             else:
                 pass
 
 
 
-url = input("Enter Your Target: ")
-keyword = input("Enter Your Keyword: ")
+url = input("Enter Your Target: ").strip()
+keyword = input("Enter Your Keyword: ").strip()
 scrab(url,keyword)
